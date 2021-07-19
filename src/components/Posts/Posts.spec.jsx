@@ -38,4 +38,10 @@ describe("<Posts />", () => {
       "img/img3.png"
     );
   });
+
+  it("should match snapchot", () => {
+    const { container } = render(<Posts {...props} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
