@@ -16,4 +16,9 @@ describe("<PostCard />", () => {
 
     expect(screen.getByText(postCardPropsMock.body)).toBeInTheDocument();
   });
+
+  it("should match snapshot", () => {
+    const { container } = render(<PostCard post={postCardPropsMock} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
