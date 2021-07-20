@@ -4,7 +4,8 @@ import { Button } from ".";
 
 describe("<Button />", () => {
   it("should render the button with text 'Load more'", () => {
-    render(<Button text="load more" />);
+    const fn = jest.fn();
+    render(<Button text="load more" onClick={fn} />);
 
     expect.assertions(1);
 
@@ -23,7 +24,8 @@ describe("<Button />", () => {
   });
 
   it("should be disabled when disabled is true", () => {
-    render(<Button text="load more" disabled={true} />);
+    const fn = jest.fn();
+    render(<Button disabled={true} text="load more" onClick={fn} />);
 
     const button = screen.getByRole("button", { name: /load more/i });
     expect(button).toBeDisabled();
