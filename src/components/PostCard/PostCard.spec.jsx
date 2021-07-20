@@ -6,13 +6,9 @@ describe("<PostCard />", () => {
   it("should render PostCard correctly", () => {
     render(<PostCard post={postCardPropsMock} />);
 
-    expect(
-      screen.getByRole("img", { name: postCardPropsMock.title })
-    ).toHaveAttribute("src", postCardPropsMock.cover);
+    expect(screen.getByRole("img", { name: postCardPropsMock.title })).toHaveAttribute("src", postCardPropsMock.cover);
 
-    expect(
-      screen.getByRole("heading", { name: postCardPropsMock.title })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: postCardPropsMock.title })).toBeInTheDocument();
 
     expect(screen.getByText(postCardPropsMock.body)).toBeInTheDocument();
   });
